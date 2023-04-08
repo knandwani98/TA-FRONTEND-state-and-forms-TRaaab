@@ -5,31 +5,33 @@ class App extends React.Component {
     super();
     this.state = {
       counter: 0,
-      steps: 1,
+      step: 1,
+      max: 1000000000000000000000000000000000000000000000,
     };
   }
 
-  incSteps = (steps) => {
+  incSteps = (step) => {
     this.setState({
-      steps: steps,
+      step: step,
     });
   };
 
-  maxStep = (steps) => {
+  handleMax = (max) => {
     this.setState({
-      steps: steps,
+      max: max,
     });
   };
 
   handleIncr = () => {
+    let { step, max, counter } = this.state;
     this.setState({
-      counter: this.state.counter + this.state.steps,
+      counter: counter + step > max ? counter : counter + step,
     });
   };
 
   handleDecr = () => {
     this.setState({
-      counter: this.state.counter - this.state.steps,
+      counter: this.state.counter - this.state.step,
     });
   };
 
@@ -47,56 +49,40 @@ class App extends React.Component {
             <h1>{this.state.counter}</h1>
           </header>
           <section className="flex gap-4">
+            {/* Steps */}
             <div>
               <h2>Steps</h2>
               <div className="flex gap">
-                <button
-                  onClick={(e) => {
-                    this.incSteps(5);
-                  }}
-                >
-                  5
-                </button>
-                <button
-                  onClick={(e) => {
-                    this.incSteps(10);
-                  }}
-                >
-                  10
-                </button>
-                <button
-                  onClick={(e) => {
-                    this.incSteps(15);
-                  }}
-                >
-                  15
-                </button>
+                {[5, 10, 15].map((step) => {
+                  return (
+                    <button
+                      onClick={() => {
+                        this.incSteps(step);
+                      }}
+                      className={this.state.step === step ? "active" : ""}
+                    >
+                      {step}
+                    </button>
+                  );
+                })}
               </div>
             </div>
+            {/* Max Value */}
             <div>
               <h2>Max Value</h2>
               <div className="flex gap">
-                <button
-                  onClick={(e) => {
-                    this.maxStep(15);
-                  }}
-                >
-                  15
-                </button>
-                <button
-                  onClick={(e) => {
-                    this.maxStep(100);
-                  }}
-                >
-                  100
-                </button>
-                <button
-                  onClick={(e) => {
-                    this.maxStep(200);
-                  }}
-                >
-                  200
-                </button>
+                {[15, 100, 200].map((max) => {
+                  return (
+                    <button
+                      onClick={() => {
+                        this.handleMax(max);
+                      }}
+                      className={this.state.max === max ? "active" : ""}
+                    >
+                      {max}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </section>
