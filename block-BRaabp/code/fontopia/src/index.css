@@ -144,10 +144,21 @@ body {
   justify-content: space-evenly;
 }
 
+.grid {
+  display: grid;
+}
+
+.col-3-1 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap {
+  gap: 60px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: palegoldenrod;
 }
 
 Header {
@@ -155,12 +166,24 @@ Header {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bolder;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 1.8;
 }
 
 .nav {
-  background-color: paleturquoise;
+  background-color: whitesmoke;
   border-radius: 30px;
   border: 1px solid gray;
 }
@@ -194,4 +217,21 @@ h1 {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+/* Fonts */
+
+.card {
+  background-color: whitesmoke;
+  border: 1px solid grey;
+  padding: 2rem;
+  border-radius: 8px;
+  min-height: 250px;
+}
+
+span {
+  display: inline-block;
+  margin-block: 1rem;
+  margin-top: 3rem;
+  color: grey;
 }
