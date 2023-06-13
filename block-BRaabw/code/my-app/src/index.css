@@ -1,0 +1,427 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Generals */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 4rem;
+}
+
+.container {
+  padding-inline: 3rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-top {
+  align-items: flex-start;
+}
+
+.f-left {
+  justify-content: flex-start;
+}
+
+.f-around {
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.4rem;
+}
+
+.btn.reset {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 0.4rem;
+}
+
+/* Header */
+header {
+  background-color: black;
+  color: white;
+}
+
+.header {
+  padding-block: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Section  */
+
+.sidebar {
+  /* background-color: palegoldenrod; */
+  position: fixed;
+  width: 200px;
+}
+
+.sizes {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sizes button {
+  height: 3rem;
+  width: 3rem;
+  background-color: ghostwhite;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sizes .active {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.mainbar {
+  margin-left: 220px;
+  /* background-color: paleturquoise; */
+  grid-column: span 4;
+}
+
+.sort {
+  text-align: center;
+}
+
+.sort select {
+  width: 10rem;
+  padding: 0.4rem 0;
+  border: 0;
+  color: red;
+  font-size: 1rem;
+}
+
+.total-items {
+  text-align: center;
+  font-size: 1rem;
+  color: red;
+}
+
+/* product */
+
+.products-sec {
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-color: black;
+  object-fit: cover;
+}
+
+.product-content {
+  text-align: center;
+}
+
+.product-card h2 {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.product-card p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem;
+}
+
+.product-content button {
+  padding: 0.8rem 1.8rem;
+}
+
+.product-img {
+  position: relative;
+}
+.product-img .btn.alert {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: red;
+}
+
+.product-img .sizes-icon {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.product-img .sizes-icon button {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.cart-icon {
+  font-size: 2rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-size {
+  font-size: 1rem;
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  top: -1rem;
+  right: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart {
+  position: relative;
+  color: white;
+  right: 0;
+  min-width: 350px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  scroll-behavior: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cart h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+}
+
+.cart h2 {
+  margin-left: -1rem;
+}
+
+.cart-product .card {
+  width: 100%;
+  position: relative;
+}
+
+.cart .price {
+  color: red;
+  font-size: 1.4rem;
+  margin-left: 4rem;
+}
+
+.cart img {
+  width: 80%;
+}
+
+.cart .close {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+.cart-content {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.cart-content h4 {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.cart .footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cart .quantity button {
+  padding: 0;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.toggle-cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.checkout {
+  background-color: black;
+  color: white;
+  border: none;
+  width: 100%;
+  padding-block: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.cart .total h4 {
+  margin: 2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
